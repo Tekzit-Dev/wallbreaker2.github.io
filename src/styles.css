@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+
+.toggle span{
+    @apply h-[1px] w-5 bg-white inline-block mb-1
+}
+
+.close-nav-toggle span{
+    @apply h-[1px] w-5 bg-white inline-block
+}
+
+.navigationActive,.logout a{
+    @apply drop-shadow-[0_2px_2px_#007FA6_15%] bg-white border border-light text-dark rounded-md lg:text-base text-sm font-medium lg:px-5 md:px-3 px-2 lg:py-3 py-2 flex
+}
+
+.navigationActive img{
+    @apply xl:mr-7 lg:mr-5 sm:mr-3 mr-2 sm:w-auto w-5
+}
+
+.navigationActive img:nth-child(2){
+    @apply hidden
+}
+
+.same-styles button{
+    @apply lg:text-base text-sm font-medium text-white bg-primary block w-full lg:py-4 md:py-3 py-2 text-center rounded-md lg:mt-8 md:mt-6 mt-4
+}
+
+.same-styles span,.chat-info .title h4{
+    @apply lg:text-base text-sm font-medium text-dark flex
+}
+
+.same-styles span br{
+    @apply lg:block hidden
+}
+
+.same-styles img{
+    @apply mr-3
+}
+
+.same-styles img{
+    @apply mr-3
+}
+
+.same-styles{
+    @apply bg-white border-2 border-primary rounded-2xl xl:px-4 px-3 xl:py-7 lg:py-5 md:py-4 py-3 mt-3
+}
+
+.production .actions a{
+    @apply lg:text-base text-sm inline-block lg:py-3 py-2 lg:px-7 md:px-6 px-4
+}
+
+.right-panel-content .picture{
+    @apply cursor-pointer hover:scale-105 transition-all ease-linear duration-500
+}
+
+.custom{
+    @apply md:z-auto z-20 transition-all ease-linear duration-1000 xl:w-5/6 w-full bg-white ml-auto xl:py-16 lg:py-14 md:py-12 sm:py-10 py-8 opacity-0 invisible scale-0 absolute -left-1/2 xl:top-0 top-20 
+}
+
+.form-grid .form-info{
+    @apply w-full flex sm:flex-nowrap flex-wrap border-t border-stroke3 lg:py-9 md:py-8 sm:py-6 py-4
+}
+
+.form-grid .form-info .title{
+    @apply sm:w-1/2 w-full sm:mb-0 mb-4
+}
+
+.form-grid .title label{
+    @apply text-dark font-bold lg:text-base md:text-sm text-sm pb-2
+}
+
+.form-grid .title p{
+    @apply text-dark font-light lg:text-sm text-xs leading-4 sm:pr-20 pr-2
+}
+
+.form-grid .form-info .custom-width{
+    @apply sm:w-1/2 w-full
+}
+
+.form-grid .custom-width input{
+    @apply border border-stroke2 lg:h-12 h-10 lg:leading-[48px] leading-10 w-full bg-lightInput placeholder-black rounded-md indent-4 outline-none lg:text-base text-sm font-medium
+}
+
+.profile .custom-btnn{
+    @apply bg-primary lg:h-12 h-10 lg:leading-[48px] leading-10 lg:w-44 md:w-40 sm:w-36 w-32 text-white lg:text-base md:text-sm text-sm font-medium rounded-md
+}
+
+.custom .title-paragraph h2,.custom .faq-content h2,.custom .title h2{
+    @apply lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium text-dark
+}
+
+.custom .title-paragraph p,.custom .title p{
+    @apply text-dark font-light lg:text-sm text-xs leading-4 xl:pt-7 lg:pt-6 md:pt-5 pt-3 lg:pb-5 pb-4
+}
+
+.profile .members-grid .info-box{
+    @apply w-full flex xs:flex-col justify-between items-center lg:mt-11 md:mt-9 sm:mt-7 mt-5
+}
+
+.profile .members-grid .picture-title{
+    @apply flex items-center sm:mb-0 mb-4
+}
+
+.profile .members-grid .picture-title h4{
+    @apply text-black font-medium lg:text-base md:text-sm text-sm pb-2
+}
+
+.profile .members-grid .picture-title span{
+    @apply text-black font-light lg:text-sm text-xs leading-4
+}
+
+.arrow-back .arrow{
+    @apply cursor-pointer picture lg:w-9 md:w-8 w-6 lg:h-9 md:h-8 h-6 flex justify-center items-center border border-primary rounded-full absolute xl:left-12 left-4 lg:top-auto top-2
+}
+
+.faq-grid h4{
+    @apply text-dark text-sm font-bold
+}
+
+.faq-grid p{
+    @apply text-dark font-light lg:text-sm text-xs lg:leading-4 leading-normal mt-2
+}
+
+.custom .actionBtn{
+    @apply bg-primary lg:h-12 h-10 lg:leading-[48px] leading-10 lg:w-52 md:w-48 sm:w-44 w-40 mb-4 text-white lg:text-base md:text-sm text-sm font-medium rounded-md
+}
+
+.custom .chat-info{
+    @apply flex lg:justify-around justify-between lg:px-0 px-3 items-center lg:py-8 md:py-7 sm:py-5 py-4 border-b border-light bg-white
+}
+
+.custom .chat-info .piture-title{
+    @apply flex items-center
+}
+
+.custom .chat-info .piture-title img{
+    @apply xl:w-auto w-14
+}
+
+.chat-info .title span{
+    @apply  lg:text-sm text-xs text-dark font-light
+}
+
+.arrow-circle{
+    @apply xl:w-9 w-7 xl:h-9 h-7 flex justify-center items-center border border-primary rounded-full
+}
+
+.info-box .messages h4{
+    @apply text-dark font-medium lg:text-base text-sm
+}
+
+.info-box .messages p{
+    @apply text-black font-light lg:text-base text-sm leading-4 lg:pt-4 pt-3
+}
+
+.info-box .messages h4 span{
+    @apply first:text-xs font-medium opacity-[35%] inline-block
+}
+
+.conversation .info-box{
+    @apply lg:p-5 md:p-4 p-3 border border-light bg-white lg:mb-8 md:mb-6 mb-5 rounded-md
+}
+
+.current-active h2{
+    @apply font-medium lg:text-xl md:text-lg text-base text-white
+}
+
+.current-active h4,.current-active span{
+    @apply lg:text-base text-sm text-white font-light
+}
+
+.gallery-box{
+    @apply xl:w-3/12 md:w-1/3 w-1/2 lg:mb-6 md:mb-5 mb-4 lg:pr-7 md:pr-6 sm:pr-5 pr-4
+}
+
+.video-info{
+    @apply flex justify-between items-center bg-white lg:py-6 md:py-5 sm:py-4 py-3 lg:px-8 md:px-7 sm:px-6 px-5 border border-stroke rounded-lg 
+}
+
+@tailwind utilities;
+
+/* Scrollbar Css */
+
+.admin-panel::-webkit-scrollbar,
+.notifications::-webkit-scrollbar,
+.videos-body::-webkit-scrollbar,
+.gallery-body::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* scrollbar background */
+
+/* Active Styles Css */
+
+.custom.active{
+    opacity: 1;
+    visibility: visible;
+    left: 16.66%;
+    transform: scale(1);
+    transition: 0.5s ease-in-out;
+}
+
+.video-info.active{
+    background-color: #0095CF;
+}
+
+.video-info.active h4,.video-info.active p{
+    color: #fff;
+}
+
+.video-info:focus h4,.video-info:focus p{
+    color: #fff;
+}
+
+.video-info:focus img:nth-child(1),.video-info.active img:nth-child(1){
+    display: none;
+}
+
+.video-info:focus img:nth-child(2),.video-info.active img:nth-child(2){
+    display: block;
+}
+
+.tickbox input:checked + label::after{
+    content: "";
+    height: 15px;
+    border-radius: 2px;
+    width: 29px;
+    border-bottom: 5px solid #009540;
+    border-left: 5px solid #009540;
+    transform: translateY(-50%) rotate(-45deg);
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.circle-class-active.active{
+    opacity: 1;
+    visibility: visible;
+    padding-bottom: 150px;
+    transform: scale(1);
+    background-image: url(../public/assets/img/bg-gradient.png);
+}
+
+.circle-class-active.active .picture-big{
+    left: 1%;
+    transition: 0.3s ease-in-out;
+}
+
+.navigationActive.active {
+    background-color: #0095CF;
+    color: #fff;
+}
+
+.navigationActive.active img:nth-child(2){
+    display: block;
+}
+
+.navigationActive.active img:nth-child(1){
+    display: none;
+}
+
+.chat-info.active{
+    background-color: #0095CF;
+    color: #fff;
+}
+
+.chat-info.active h4,.chat-info.active span{
+    color: #fff;
+}
+
+/* Menu Active */
+
+.admin-panel.active{
+    opacity: 1;
+    left: 0;
+    visibility: visible;
+    z-index: 99;
+}
+
+/* Media queries */
+
+@media(max-width:1280px){
+    .custom.active{
+        left: 0;
+    }
+}
+
+@media(max-width:576px){
+    .tickbox input:checked + label::after{
+        height: 12px;
+        width: 21px;
+        top: 4px;
+        left: 0;
+    }
+}

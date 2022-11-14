@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/styles.css">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Dashboard</title>
+</head>
+<body class="font-Inter">
+    <!-- Dashboard -->
+
+    <section class="dashboard">
+        <div class="dashboard-content relative">
+            <div class="toggle absolute top-8 left-8 cursor-pointer z-10 flex flex-col xl:opacity-0 opacity-100" onclick="menuActive('adminPanel')">
+                <span></span>
+                <span></span>
+                <span class="mb-0"></span>
+            </div>
+            <div class="transition-all ease-linear duration-500 admin-panel xl:w-1/6 lg:w-1/3 md:w-1/2 w-full fixed top-0 bottom-0 h-screen bg-dark px-5 py-8 overflow-y-scroll z-10 xl:opacity-100 xl:visible xl:left-0 -left-[1000px] invisible opacity-0" id="adminPanel">
+                <div class="close-nav-toggle flex-col absolute right-4 top-8 cursor-pointer xl:hidden flex" onclick="menuActive('adminPanel')">
+                    <span class="rotate-[52deg]"></span>
+                    <span class="mt-[-1px] rotate-[132deg]"></span>
+                </div>
+                <div class="logo">
+                    <a href="" class="inline-block">
+                        <img src="./assets/img/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="home-profile xl:pt-9 lg:pt-7 pt-5">
+                    <div class="home">
+                        <a href="javascript:void(0)" id="homeActive" onclick="activeFunc('Home', 'homeActive')" class="active navigationActive">
+                           <img src="assets/img/home-img-d.svg" alt="">
+                           <img src="assets/img/home-img-a.svg" alt="">
+                            Home
+                        </a>
+                    </div>
+                    <div class="profile lg:pt-5 pt-3">
+                        <a href="javascript:void(0)" id="profileActive" onclick="activeFunc('myProfile', 'profileActive')" class="navigationActive">
+                           <img src="assets/img/profile-img-d.svg" alt="">
+                           <img src="assets/img/profile-img-a.svg" alt="">
+                            My Profile
+                        </a>
+                    </div>
+                    <div class="chat lg:pt-5 pt-3">
+                        <a href="javascript:void(0)" id="chatActive" onclick="activeFunc('Chat','chatActive')" class="navigationActive">
+                            <img src="assets/img/chat-img-d.svg" alt="">
+                            <img src="assets/img/chat-img-a.svg" alt="">
+                            Chat
+                        </a>
+                    </div>
+                </div>
+                <div class="notifications h-[530px] overflow-y-scroll xl:mt-12 lg:mt-10 md:mt-8 mt-6">
+                    <div class="title bg-white rounded-tr-md rounded-tl-md block lg:px-5 md:px-3 px-2 lg:py-3 py-2 sticky top-0 z-10">
+                        <h4 class="lg:text-base text-sm font-medium text-dark"> <span class="h-6 min-w-[24px] bg-red lg:text-base text-sm text-white leading-6 inline-block rounded-full font-medium text-center mr-3">3</span> Notifications</h4>
+                    </div>
+                    <div class="body bg-black lg:px-5 px-3">
+                        <div class="same-styles notification-message relative lg:top-5 top-3">
+                            <span><img src="assets/img/message-admin.svg" alt=""> Message from <br> Ronnie</span>
+                            <button>
+                                Respond Now
+                            </button>
+                        </div>
+                        <div class="same-styles sign-off lg:mt-10">
+                            <span><img src="assets/img/message-admin.svg" alt=""> Sign off <br> required</span>
+                            <button>
+                                Sign Off Now
+                            </button>
+                        </div>
+                        <div class="same-styles message lg:mt-5">
+                            <span> <img src="assets/img/message-admin.svg" alt=""> Message from <br> Ronnie</span>
+                            <button>
+                                Respond Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logout xl:mt-11 lg:mt-10 md:mt-8 mt-6">
+                    <a href="login.html">
+                        <img src="assets/img/logout.svg" class="xl:mr-7 lg:mr-5 mr-4" alt=""> Log Out
+                    </a>
+                </div>
+                <div class="logout lg:mt-5 mt-3" onclick="activeFunc('HelpSupport','HelpActive')">
+                    <a href="javascript:void(0)" class="navigationActive" id="HelpActive">
+                        <img src="assets/img/help.svg" alt="">
+                        <img src="assets/img/help-active.svg" alt="">
+                        Help
+                    </a>
+                </div>
+            </div>
+            <div class="right-panel bg-cover bg-no-repeat bg-center absolute top-0 left-0 right-0 w-full bg-[url('assets/img/main-bg.png')]" id="Home">
+                <div class="right-panel-content xl:w-5/6 w-full ml-auto flex md:flex-row flex-col md:items-start items-center xl:py-40 lg:py-36 md:py-32 sm:py-24 py-20 lg:pr-20 md:pr-16 sm:pr-12 md:px-0 px-4">
+                    <div class="box h-full flex items-center justify-center xl:px-28 lg:px-20 md:px-16 sm:px-10 px-8 md:w-3/5 w-full md:mb-0 mb-5">
+                         <div class="picture-thing absolute">
+                            <img src="assets/img/wbthing.svg" class="xl:w-[330px] md:w-48 w-36" alt="">
+                         </div>
+                        <div class="w-full">
+                            <div class="w-full flex lg:mb-6 md:mb-5 sm:mb-4 mb-3">
+                                <div class="picture lg:mr-3 mr-2">
+                                    <img src="assets/img/Delivery.svg" alt="" onclick="circleClassActive(['Delivery'])">
+                                </div>
+                                <div class="picture lg:ml-3 ml-2">
+                                    <img src="assets/img/planning.svg" alt="" onclick="circleClassActive(['Planning'])">
+                                </div>
+                            </div>
+                            <div class="full flex">
+                                <div class="picture lg:mr-3 mr-2">
+                                    <img src="assets/img/Editing.svg" alt="" onclick="circleClassActive(['Editing'])">
+                                </div>
+                                <div class="picture lg:ml-3 ml-2">
+                                    <img src="assets/img/production.svg" alt="" onclick="circleClassActive(['Production'])">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="production md:w-2/5 w-full bg-multiple border border-stroke backdrop-blur-2xl rounded-[20px] xl:py-14 lg:py-12 md:py-10 py-7 xl:px-16 lg:px-12 md:px-8 px-6">
+                        <div class="title">
+                            <h2 class="text-white lg:text-4xl md:text-3xl text-2xl">PRODUCTION TITLE NAME</h2>
+                        </div>
+                        <div class="body-area">
+                            <span class="text-white lg:text-base text-sm font-medium lg:mt-4 md:mt-3 mt-2 inline-block">Expected Final Completion:</span>
+                            <div class="actions lg:mt-3 mt-2">
+                                <a href="" class="lg:py-3 py-2 lg:px-6 md:px-4 px-3 lg:text-base text-sm text-dark2 font-medium bg-white inline-block border border-[#C2CED5] rounded-lg">13th Nov 2022</a>
+                            </div>
+                            <div class="meta xl:mt-14 lg:mt-12 md:mt-9 mt-7">
+                                <p class="lg:text-base text-sm text-white font-light lg:leading-7 leading-normal">Hey, [User_Name] - welcome to your personal dashboard for the [Production_Title_Name] production. <br><br>
+                                    Please select a segment to learn more about the current development stage. You’ll have more options in each section and if your attention is required there will be an “!” icon. 
+                                    <br><br>
+                                    If you have any questions or would just like a quick chat with the team then feel free to hit the “Chat” button in the menu.
+                                    
+                                    <br><br>
+                                    Thanks for viewing - we hope you have a great day!
+                           
+                                </p>
+                            </div>
+                            <div class="actions flex xl:mt-12 lg:mt-10 md:mt-8 mt-6">
+                                <a href="" class=" text-dark2 font-light bg-white rounded-tl-md rounded-bl-md">Current Status:</a>
+                                <a href="" class=" text-white font-medium bg-primary3 rounded-tr-md rounded-br-md">Production: 80%</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Profile -->
+
+    <div class="custom profile 2xl:px-32 xl:px-20 md:px-16 sm:px-10 px-4" id="myProfile">
+        <div class="profile-content">
+            <div class="arrow-back">
+                <div onclick="activeFunc('myProfile')" class="arrow">
+                    <img src="assets/img/arrow-back.svg" alt="">
+                </div>
+            </div>
+            <div class="profile-grid flex lg:flex-nowrap flex-wrap">
+                <div class="lg:w-1/2 w-full 2xl:mr-16 xl:mr-12 lg:mr-8">
+                    <div class="profile-info">
+                        <div class="title-paragraph">
+                            <h2>Your Profile</h2>
+                            <p>You can edit your contact information here and add new users to your workspace if you want to. There is also a bit more of a thing for yes here we go so now some stuff to read here okay.</p>
+                        </div>
+                        <div class="form-grid flex flex-wrap">
+                            <div class="form-info items-center">
+                                <div class="title">
+                                    <label>Your Name</label>
+                                    <p>Your name will be displayed to Wallbreaker staff and your team.</p>
+                                </div>
+                                <div class="text-field custom-width">
+                                    <input type="text" name="" id="" value="Billy Metcalfe" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-info">
+                                <div class="title">
+                                    <label>Your Photo</label>
+                                    <p>Your photo will be displayed to Wallbreaker staff and your team.</p>
+                                </div>
+                                <div class="photo custom-width flex justify-between items-center">
+                                    <div class="picture">
+                                        <img src="assets/img/profile-dp.svg" alt="">
+                                    </div>
+                                    <button class="custom-btnn">
+                                        Change Photo
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-info w-full items-center">
+                                <div class="title">
+                                    <label>Job Title</label>
+                                    <p>Optional Will be displayed to Wallbreaker staff and your team.</p>
+                                </div>
+                                <div class="text-field custom-width">
+                                    <input type="text" name="" id="" value="Graphic Designer" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-info items-center">
+                                <div class="title">
+                                    <label>Contact Email Address</label>
+                                    <p>This is only ever used to log in and to change your password if you forget.</p>
+                                </div>
+                                <div class="text-field custom-width">
+                                    <input type="email" name="" id="" value="billy@orisel.co.uk" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-info">
+                                <div class="title">
+                                    <label>Password</label>
+                                    <p>Please change your password using the button to the right.</p>
+                                </div>
+                                <div class="actions custom-width text-right">
+                                    <button class="custom-btnn">
+                                        Change Password
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions lg:mt-16 md:mt-14 sm:mt-10 mt-8">
+                            <button class="bg-primary lg:mb-0 mb-5 lg:h-12 h-10 lg:leading:[48px] leading-10 lg:w-44 md:w-40 sm:w-36 w-32 text-white lg:text-base md:text-sm text-sm font-medium rounded-md">
+                                Confirm Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full 2xl:ml-16 xl:ml-12 lg:ml-8">
+                    <div class="members-info">
+                        <div class="title-paragraph">
+                            <h2>Your Team Members</h2>
+                            <p>You can add up to 5 additional team members who can view the Wallbreaker dashboard at any point. Just input their email address and they will receive a sign-up link.</p>
+                        </div>
+                        <div class="members-grid border-t border-stroke3">
+                            <div class="info-box lg:mt-7 md:mt-6 sm:mt-5 mt-4">
+                                <div class="picture-title">
+                                    <div class="picture">
+                                        <img src="assets/img/member1.svg" alt="">
+                                    </div>
+                                    <div class="title xl:pl-12 lg:pl-10 md:pl-8 pl-7">
+                                        <h4>Barry Scott</h4>
+                                        <span>Managing Director</span>
+                                    </div>
+                                </div>
+                                <div class="actions">
+                                    <button class="custom-btnn">
+                                        Remove Member
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <div class="picture-title">
+                                    <div class="picture">
+                                        <img src="assets/img/member1.svg" alt="">
+                                    </div>
+                                    <div class="title xl:pl-12 lg:pl-10 md:pl-8 pl-7">
+                                        <h4>Barry Scott</h4>
+                                        <span>Managing Director</span>
+                                    </div>
+                                </div>
+                                <div class="actions">
+                                    <button class="custom-btnn">
+                                        Remove Member
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <div class="picture-title">
+                                    <div class="picture">
+                                        <img src="assets/img/member1.svg" alt="">
+                                    </div>
+                                    <div class="title xl:pl-12 lg:pl-10 md:pl-8 pl-7">
+                                        <h4>Barry Scott</h4>
+                                        <span>Managing Director</span>
+                                    </div>
+                                </div>
+                                <div class="actions">
+                                    <button class="custom-btnn">
+                                        Remove Member
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="info-box w-full flex xs:flex-col xl:mt-20 lg:mt-16 md:mt-14 sm:mt-12 mt-8">
+                                <input type="email" name="" id="" placeholder="Enter Email Address" class="mr-3 border border-stroke2 lg:h-12 h-10 lg:leading-[48px] leading-10 w-full bg-lightInput placeholder-black rounded-md indent-4 outline-none lg:text-base text-sm font-medium">
+                                <div class="actions">
+                                    <button class="xs:mt-5 custom-btnn">
+                                        Invite Member
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile -->
+
+    <!-- Help And Support -->
+
+    <div class="custom 2xl:px-32 lg:px-24 md:px-16 sm:px-14 px-6" id="HelpSupport">
+        <div class="help-content">
+            <div class="arrow-back cursor-pointer" onclick="activeFunc('HelpSupport')">
+                <div class="arrow">
+                    <img src="assets/img/arrow-back.svg" alt="">
+                </div>
+            </div>
+            <div class="help-grid flex md:flex-nowrap flex-wrap">
+                <div class="md:w-1/2 w-full lg:mr-8 md:mr-7 mr-0">
+                    <div class="help-support-info">
+                        <div class="title-paragraph">
+                            <h2>Help & Support</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. 
+                                <br><br>
+                                Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem orci, mattis non efficitur id, ultricies vel nibh. Sed volutpat lacus vitae gravida viverra. Fusce vel tempor elit. Proin tempus, magna id scelerisque vestibulum, nulla ex pharetra sapien, tempor posuere massa neque nec felis. Aliquam sem ipsum, vehicula ac tortor vel, egestas ullamcorper dui. Curabitur at risus sodales, tristique est id, euismod justo. 
+                                <br><br>
+                                Mauris nec leo non libero sodales lobortis. Quisque a neque pretium, dictum tellus vitae, euismod neque. Nulla facilisi. Phasellus ultricies dignissim nibh ut cursus. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna. Aenean lacinia, nisl id vehicula condimentum, enim massa tempor nibh, vitae volutpat sapien metus aliquet nisl. Etiam dui eros, tincidunt tristique blandit id, gravida vitae augue.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full lg:ml-8 md:ml-7 ml-0">
+                    <div class="title-paragraph">
+                        <h2>Legal Information</h2>
+                        <p>Blah, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. 
+                        <br><br>
+                        Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id. Praesent lorem orci, mattis non efficitur id, ultricies vel nibh. Sed volutpat lacus vitae gravida viverra. Fusce vel tempor elit. Proin tempus, magna id scelerisque vestibulum, nulla ex pharetra sapien, tempor posuere massa neque nec felis. Aliquam sem ipsum, vehicula ac tortor vel, egestas ullamcorper dui.
+                        <br><br>
+                        Phasellus ultricies dignissim nibh ut cursus. Nam et quam sit amet turpis finibus maximus tempor eget augue. Aenean at ultricies lorem. Sed egestas ligula tortor, sit amet mattis ex feugiat non. Duis purus diam, dictum et ante at, commodo iaculis urna. Aenean lacinia, nisl id vehicula condimentum, enim massa tempor nibh, vitae volutpat sapien metus aliquet nisl. Etiam dui eros, tincidunt tristique blandit id, gravida vitae augue.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-contact lg:mt-20 md:mt-16 sm:mt-14 mt-10">
+                <div class="faq-content flex md:flex-nowrap flex-wrap">
+                    <div class="md:w-1/2 w-full lg:mr-7 md:mr-6 sm:mr-5 mr-4">
+                    <div class="title lg:mb-7 md:mb-6 sm:mb-5 mb-4">
+                        <h2>FAQ</h2>
+                    </div>
+                    <div class="faq-grid">
+                        <div class="flex flex-wrap">
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pr-4 md:pr-4 pr-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pl-4 md:pl-4 pl-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pr-4 md:pr-4 pr-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pl-4 md:pl-4 pl-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pr-4 md:pr-4 pr-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pl-4 md:pl-4 pl-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pr-4 md:pr-4 pr-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 w-full lg:mb-6 mb-4">
+                                <div class="info-box lg:pl-4 md:pl-4 pl-0">
+                                    <h4>Here’s your question</h4>
+                                    <p>Here is an answer that is a bit longer than the question for you and you can read it right here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="md:w-1/2 w-full lg:ml-7 md:ml-6 ml-0">
+                        <div class="title lg:mb-7 md:mb-6 sm:mb-5 mb-4">
+                            <h2>Contact Us</h2>
+                            <p>If you still can’t find what you’re looking for then feel free to contact us by any means.
+                                <br><br>
+                                The fastest and most convenient way to get in touch is to use our chat function by clicking below.
+                                <br><br>
+                                Alternatively, feel free to call us or email us. Thank you!</p>
+                        </div>
+                        <div class="actions flex flex-col">
+                            <button class="actionBtn">
+                                Live Chat Now
+                            </button>
+                            <button class="actionBtn">
+                                Email Us Now
+                            </button>
+                            <button class="actionBtn">
+                                Call Us Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help And Support -->
+
+    <!-- Chatting -->
+
+    <div class="custom chatting bg-bgLight py-0" id="Chat">
+        <div class="chatting-content flex md:flex-nowrap flex-wrap">
+            <div class="md:w-3/12 sm:w-1/2 w-full border-r border-light">
+                <div class="chat-names">
+                    <div class="chat-info cursor-pointer">
+                        <div class="piture-title">
+                            <div class="picture">
+                                <img src="assets/img/chat1.svg" alt="">
+                            </div>
+                            <div class="title xl:pl-8 lg:pl-5 pl-3">
+                                <h4>Group Chat</h4>
+                                <span>Everyone</span>
+                            </div>
+                        </div>
+                        <div class="arrow cursor-pointer">
+                            <div class="arrow-circle">
+                                <img src="assets/img/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-info cursor-pointer">
+                        <div class="piture-title">
+                            <div class="picture">
+                                <img src="assets/img/chat1.svg" alt="">
+                            </div>
+                            <div class="title xl:pl-8 lg:pl-5 pl-3">
+                                <h4>Ash Wilks</h4>
+                                <span>Operations Director</span>
+                            </div>
+                        </div>
+                        <div class="arrow cursor-pointer">
+                            <div class="arrow-circle">
+                                <img src="assets/img/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-info cursor-pointer">
+                        <div class="piture-title">
+                            <div class="picture">
+                                <img src="assets/img/chat2.svg" alt="">
+                            </div>
+                            <div class="title xl:pl-8 lg:pl-5 pl-3">
+                                <h4>Luke Winter</h4>
+                                <span>Creative Director</span>
+                            </div>
+                        </div>
+                        <div class="arrow cursor-pointer">
+                            <div class="arrow-circle">
+                                <img src="assets/img/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-info cursor-pointer">
+                        <div class="piture-title">
+                            <div class="picture">
+                                <img src="assets/img/chat3.svg" alt="">
+                            </div>
+                            <div class="title xl:pl-8 lg:pl-5 pl-3">
+                                <h4>Joe Kershaw</h4>
+                                <span>Video Producer</span>
+                            </div>
+                        </div>
+                        <div class="arrow cursor-pointer">
+                            <div class="arrow-circle">
+                                <img src="assets/img/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-info cursor-pointer">
+                        <div class="piture-title">
+                            <div class="picture relative">
+                                <span class="lg:h-6 h-4 lg:w-6 w-4 rounded-full text-white text-sm font-light bg-[#A51010] flex justify-center items-center absolute right-0 top-3">3</span>
+                                <img src="assets/img/chat4.svg" alt="">
+                            </div>
+                            <div class="title xl:pl-8 lg:pl-5 pl-3">
+                                <h4>Ronnie Bushell</h4>
+                                <span>Post Production Head</span>
+                            </div>
+                        </div>
+                        <div class="arrow cursor-pointer">
+                            <div class="arrow-circle">
+                                <img src="assets/img/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 sm:w-1/2 w-full xl:px-8 lg:px-5 px-3 lg:pt-7 md:pt-6 pt-4">
+                <div class="conversation">
+                    <div class="info-box flex">
+                        <div class="picture min-w-[45px]">
+                            <img src="assets/img/conversation-img.svg" alt="">
+                        </div>
+                        <div class="messages lg:pl-4 pl-3">
+                            <h4>Ronnie Bushell <span class="lg:pl-3 pl-2">Jun 20 | 2022 | 15:43</span></h4>
+                            <p>Hey there, here is some example text for this bit. Id fuga quia hic doloribus amet et doloribus voluptas et dolorum dolores ab corporis accusantium. Sed vitae voluptas et tempora dolore est enim consequuntur. Eos aliquam porro aut architecto facilis eum necessitatibus dicta ut quos veritatis aut sint ipsum qui rerum delectus.</p>
+                        </div>
+                    </div>
+                    <div class="info-box flex">
+                        <div class="messages lg:pr-4 pr-3">
+                            <h4 class="text-right"><span class="lg:pr-3 pr-2">Jun 20 | 2022 | 15:43</span>You</h4>
+                            <p>Hey there, here is some example text for this bit. Id fuga quia hic doloribus amet et doloribus voluptas et dolorum dolores ab corporis accusantium. Sed vitae voluptas et tempora dolore est enim consequuntur. Eos aliquam porro aut architecto facilis eum necessitatibus dicta ut quos veritatis aut sint ipsum qui rerum delectus.</p>
+                        </div>
+                        <div class="picture min-w-[45px]">
+                            <img src="assets/img/conversation2.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="flex">
+                            <div class="picture min-w-[45px]">
+                                <img src="assets/img/conversation-img.svg" alt="">
+                            </div>
+                            <div class="messages lg:pl-4 pl-3">
+                                <h4>Ronnie Bushell <span class="lg:pl-3 pl-2">Jun 20 | 2022 | 15:43</span></h4>
+                                <p>Hey, here’s an attachment that I’ve attached to this message.</p>
+                            </div>
+                        </div>
+                        <div class="download-pdf border border-light rounded-md lg:p-3 p-2 xl:w-1/2 w-full lg:mt-6 md:mt-5 sm:mt-4 mt-3">
+                            <div class="sign-off flex items-center justify-between">
+                                <div class="picture-title flex items-center">
+                                    <div class="picture bg-bgLight2 lg:w-14 w-12 h-14 flex items-center justify-center rounded-md">
+                                        <img src="assets/img/pdf-image.svg" alt="">
+                                    </div>
+                                    <div class="title-pdf lg:pl-5 md:pl-4 pl-3 cursor-pointer">
+                                        <h4 class="lg:text-base text-sm text-black font-medium">Sign_Off_Form.pdf</h4>
+                                        <p class="lg:text-base text-sm text-black font-light lg:leading-4 leading-normal">PDF Document</p>
+                                    </div>
+                                </div>
+                                <div class="download">
+                                    <img src="assets/img/download.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box flex lg:p-5 md:p-4 p-3 border border-light bg-white lg:mb-56 md:mb-52 sm:mb-48 mb-40 rounded-md">
+                        <div class="messages lg:pr-4 pr-3">
+                            <h4 class="text-right"><span class="lg:pr-3 pr-2">Jun 20 | 2022 | 15:43</span>You</h4>
+                            <p>Hey there, here is some example text for this bit. Id fuga quia hic doloribus amet et doloribus voluptas et dolorum dolores ab corporis accusantium. Sed vitae voluptas et tempora dolore est enim consequuntur. Eos aliquam porro aut architecto facilis eum necessitatibus dicta ut quos veritatis aut sint ipsum qui rerum delectus.</p>
+                        </div>
+                        <div class="picture min-w-[45px]">
+                            <img src="assets/img/conversation2.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-3/12 w-full bg-dark2 lg:pl-7 md:pl-5 sm:pl-3 pl-2 md:py-0 py-4">
+                <div class="current-active bg-dark text-center h-full lg:px-0 px-2 md:py-0 py-3">
+                    <div class="picture">
+                        <img src="assets/img/active-img.png" class="mx-auto xl:w-full lg:w-48 w-32" alt="">
+                    </div>
+                    <div class="name-title xl:mt-16 lg:mt-12 md:mt-8 mt-6">
+                        <h2>Ronnie Bushell</h2>
+                        <h4 class="mt-2">Post Production Head</h4>
+                    </div>
+                    <div class="actions lg:mt-11 md:mt-9 sm:mt-8 mt-6">
+                        <a href="" class="lg:px-5 md:px-4 px-3 lg:py-4 md:py-3 py-2 text-white lg:text-base text-sm font-medium rounded-md border border-light inline-block "><span class="lg:mr-4 mr-2 h-2 w-2 inline-block rounded-full bg-[#009540]"></span> Currently Active</a>
+                    </div>
+                    <div class="time lg:mt-5 md:mt-4 mt-2">
+                        <span class="inline-block">11:58 Local Time</span>
+                    </div>
+                    <div class="contact-info lg:mt-32 md:mt-28 sm:mt-24 mt-20">
+                        <div class="title">
+                            <h2>Contact Information</h2>
+                        </div>
+                        <h4 class="lg:mt-12 md:mt-10 mt-8">Email Address:</h4>
+                        <a href="" class="lg:text-base text-sm text-primary font-medium lg:mt-3 mt-2">ronnie@wallbreaker.co.uk</a>
+                        <h4 class="lg:mt-12 md:mt-10 mt-8">Email Address:</h4>
+                        <a href="" class="lg:text-base text-sm text-primary font-medium lg:mt-3 mt-2">ronnie@wallbreaker.co.uk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatting -->
+
+    <!-- Delivery -->
+
+    <div class="transition-all duration-1000 ease-linear circle-class-active delivery xl:w-5/6 w-full ml-auto bg-cover bg-no-repeat bg-center lg:py-16 md:py-14 sm:py-12 py-10 2xl:px-14 lg:px-12 md:px-10 px-3 absolute xl:top-0 top-20 left-0 right-0 opacity-0 invisible scale-0" id="Delivery">
+        <div class="transition-all picture-big duration-1000 ease-linear picture-delivery absolute left-2/3 top-0 2xl:block hidden bottom-0">
+            <img src="assets/img/Delivery-big.svg" class="h-full" alt="">
+        </div>
+        <div class="delivery-content flex sm:flex-row flex-col items-center">
+            <div class="completion-finish text-center sm:mb-0 mb-5">
+                <div class="completion">
+                    <span class="block lg:text-base text-sm text-white font-medium">Completion:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">0%</button>
+                    </div>
+                </div>
+                <div class="finish lg:mt-9 md:mt-8 sm:mt-7 mt-5">
+                    <span class="block lg:text-base text-sm text-white font-medium">Steps Finished:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">0/1</button>
+                    </div>
+                </div>
+            </div>
+            <div class="2xl:w-3/5 lg:w-3/4 w-full ml-auto xl:pl-0 sm:pl-4 pl-0">
+                <div class="delivery-top 2xl:py-12 lg:py-8 md:py-6 py-4 px-6 bg-cover bg-no-repeat bg-center w-full rounded-xl bg-[url('assets/img/delivery-bg.png')] flex 2xl:flex-row flex-col justify-around items-center">
+                    <div class="title">
+                        <h2 class="2xl:text-4xl lg:text-3xl md:text-2xl text-xl text-white font-bold">DELIVERY</h2>
+                    </div>
+                    <P class="font-medium lg:text-sm text-xs text-white text-center px-3 2xl:py-0 py-3">This is the section where we tell you about <br class="2xl:block hidden">
+                        this bit of the circle and what needs to be done  <br class="2xl:block hidden">
+                        to move onto the next bit and stuff like that
+                    </P>
+                    <div class="actions">
+                        <span class="block font-medium lg:text-base text-sm text-white">Completion Deadline:</span>
+                        <a href="" class="lg:mt-3 mt-2 lg:py-3 py-2 lg:px-6 md:px-5 sm:px-4 px-3 lg:text-base text-sm font-medium text-dark2 inline-block bg-white rounded-md border border-light">12th Dec 2022</a>
+                    </div>
+                </div>
+                <div class="flex lg:flex-nowrap flex-wrap lg:mt-7 md:mt-6 mt-5">
+                    <div class="lg:w-1/2 w-full lg:pr-5 pr-0 lg:mb-0 mb-5">
+                        <div class="videos-section">
+                            <div class="top-head flex justify-between items-center bg-dark border border-stroke border-b-0 lg:py-7 md:py-6 sm:py-5 py-3 2xl:px-12 lg:px-10 md:px-8 sm:px-6 px-4 rounded-tl-2xl rounded-tr-2xl">
+                                <h2 class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-medium text-white">Your Videos</h2>
+                                <span class="lg:text-base text-sm font-light text-white">Scroll to view more</span>
+                            </div>
+                            <div class="videos-body bg-multiple2 border border-stroke border-t-0 overflow-y-scroll lg:px-5 md:px-4 px-3 rounded-bl-2xl rounded-br-2xl overflow-hidden">
+                                <div class="2xl:h-[650px] h-auto">
+                                    <div tabindex="1" class="video-info relative lg:top-4 top-3 focus:bg-primary cursor-pointer">
+                                        <div class="title-head">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Final Web Video</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                        </div>
+                                        <div class="arrow">
+                                            <img src="assets/img/arrow-vr.svg" alt="">
+                                            <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                        </div>
+                                    </div>
+                                    <div tabindex="2" class="video-info flex justify-between items-center bg-white lg:py-6 md:py-5 sm:py-4 py-3 lg:px-8 md:px-7 sm:px-6 px-5 border border-stroke rounded mt-8 focus:bg-primary cursor-pointer">
+                                        <div class="title-head">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Final Web Video</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                        </div>
+                                        <div class="arrow">
+                                            <img src="assets/img/arrow-vr.svg" alt="">
+                                            <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                        </div>
+                                    </div>
+                                    <div tabindex="3" class="video-info lg:mt-4 mt-3 focus:bg-primary cursor-pointer">
+                                        <div class="title-head">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium group-focus:text-yellow-300">Final Web Video</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                        </div>
+                                        <div class="arrow">
+                                            <img src="assets/img/arrow-vr.svg" alt="">
+                                            <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                        </div>
+                                    </div>
+                                    <div tabindex="4" class="video-info lg:mt-4 mt-3 focus:bg-primary cursor-pointer">
+                                        <div class="title-head">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Final Web Video</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                        </div>
+                                        <div class="arrow">
+                                            <img src="assets/img/arrow-vr.svg" alt="">
+                                            <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                        </div>
+                                    </div>
+                                    <div tabindex="5" class="video-info lg:mt-4 mt-3 focus:bg-primary cursor-pointer">
+                                        <div class="title-head">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Final Web Video</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                        </div>
+                                        <div class="arrow">
+                                            <img src="assets/img/arrow-vr.svg" alt="">
+                                            <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                        </div>
+                                    </div>
+                                    <div tabindex="6" class="video-info lg:mt-4 mt-3 focus:bg-primary cursor-pointer">
+                                        <div class="title-head">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Final Web Video</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                        </div>
+                                        <div class="arrow">
+                                            <img src="assets/img/arrow-vr.svg" alt="">
+                                            <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:pl-5 pl-0 overflow-hidden">
+                        <div class="web-video h-full rounded-bl-2xl rounded-br-2xl overflow-hidden">
+                            <div class="top-head flex justify-between items-center relative border border-stroke border-b-0 bg-light2 lg:py-7 md:py-6 sm:py-5 py-3 2xl:px-12 lg:px-10 md:px-8 sm-6 px-4 rounded-tl-2xl rounded-tr-2xl">
+                                <h2 class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-medium text-white relative z-10 text-center">Web Video</h2>
+                            </div>
+                            <div class="web-info-body bg-multiple3 lg:p-11 md:p-9 sm:p-7 p-5 h-full">
+                                <div class="specification">
+                                    <h4 class="lg:text-sm text-xs text-white font-light">Specification</h4>
+                                    <p class="font-medium lg:text-base text-sm text-white mt-2">1920x1080 | 16:9 Aspect Ratio | 0:45min</p>
+                                </div>
+                                <div class="description lg:mt-10 md:mt-8 sm:mt-7 mt-5">
+                                    <h4 class="lg:text-sm text-xs text-white font-light">Description</h4>
+                                    <p class="font-medium lg:text-base text-sm text-white mt-2">This is the video for your website home page</p>
+                                </div>
+                                <div class="video-sec lg:mt-14 md:mt-12 sm:mt-10 mt-8">
+                                    <span class="lg:text-sm text-xs text-white font-light">File Preview</span>
+                                    <div class="picture-video lg:mt-3 mt-2">
+                                        <img src="assets/img/video.png" class="w-full" alt="">
+                                    </div>
+                                    <div class="actions flex lg:mt-9 md:mt-8 sm:mt-7 mt-5">
+                                        <a href="" class="lg:py-4 md:py-3 py-2 lg:px-5 md:px-4 sm:px-3 px-2 lg:text-base text-sm font-medium text-white bg-primary rounded-md mr-3 inline-block">Download .MP4</a>
+                                        <a href="" class="lg:py-4 md:py-3 py-2 lg:px-5 md:px-4 sm:px-3 px-2 lg:text-base text-sm font-medium text-white border border-primary rounded-md inline-block">Download All Formats</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery -->
+
+    <!-- Editing -->
+
+    <div class="transition-all duration-1000 ease-linear circle-class-active bg-cover bg-no-repeat bg-center editing xl:w-5/6 w-full ml-auto bg-dark2 lg:py-16 md:py-14 sm:py-12 py-10 2xl:px-14 lg:px-12 md:px-10 px-3 absolute xl:top-0 top-20 left-0 right-0 opacity-0 invisible scale-0" id="Editing"> 
+        <div class="transition-all picture-big duration-1000 ease-linear picture-editing picture-big absolute left-2/3 top-0 2xl:block hidden bottom-0">
+            <img src="assets/img/Editing-big.svg" class="h-full" alt="">
+        </div>
+        <div class="editing-content flex sm:flex-row flex-col items-center">
+            <div class="completion-finish text-center sm:mb-0 mb-5">
+                <div class="completion">
+                    <span class="block lg:text-base text-sm text-white font-medium">Completion:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">100%</button>
+                    </div>
+                </div>
+                <div class="finish lg:mt-9 md:mt-8 sm:mt-7 mt-5">
+                    <span class="block lg:text-base text-sm text-white font-medium">Steps Finished:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">8/8</button>
+                    </div>
+                </div>
+            </div>
+            <div class="2xl:w-3/5 lg:w-3/4 w-full ml-auto xl:pl-0 sm:pl-4 pl-0">
+                <div class="editing-top 2xl:py-12 lg:py-8 md:py-6 py-4 px-6 bg-cover bg-no-repeat bg-center w-full rounded-xl bg-[url('assets/img/editing-bg.png')] flex 2xl:flex-row flex-col justify-around items-center">
+                    <div class="title">
+                        <h2 class="2xl:text-4xl lg:text-3xl md:text-2xl text-xl text-white font-bold">EDITING</h2>
+                    </div>
+                    <P class="font-medium lg:text-sm text-xs text-white text-center px-3 2xl:py-0 py-3">This is the section where we tell you about <br class="2xl:block hidden">
+                        this bit of the circle and what needs to be done <br class="2xl:block hidden">
+                        to move onto the next bit and stuff like that
+                    </P>
+                    <div class="actions">
+                        <span class="block font-medium lg:text-base text-sm text-white">Completion Deadline:</span>
+                        <a href="" class="lg:mt-3 mt-2 lg:py-3 py-2 lg:px-6 md:px-5 sm:px-4 px-3 lg:text-base text-sm font-medium text-dark2 inline-block bg-white rounded-md border border-light">12th Sep 2022</a>
+                    </div>
+                </div>
+                <div class="flex lg:flex-nowrap flex-wrap lg:mt-7 md:mt-6 mt-5">
+                    <div class="lg:w-1/2 w-full lg:pr-5 pr-0 lg:mb-0 mb-5">
+                        <div class="videos-section">
+                            <div class="top-head flex justify-between items-center bg-dark border border-stroke border-b-0 lg:py-7 md:py-6 sm:py-5 py-3 2xl:px-12 lg:px-10 md:px-8 sm:px-6 px-4 rounded-tl-2xl rounded-tr-2xl">
+                                <h2 class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-medium text-white">Video Drafts</h2>
+                                <span class="lg:text-base text-sm font-light text-white">Scroll to view more</span>
+                            </div>
+                            <div class="videos-body rounded-bl-2xl rounded-br-2xl 2xl:h-[650px] h-auto bg-multiple2 border border-stroke border-t-0 overflow-y-scroll lg:px-5 md:px-4 px-3">
+                                <div class="video-info relative lg:top-4 top-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk1" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk1" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Web Video Draft 1</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">Feedback Required by 23/8/22</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info mt-8 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk2" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk2" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Portrait Video Draft 4</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">Feedback Required by 23/8/22</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk3" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk3" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Web Hero Video Draft 2</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">Signed Off 4/6/22</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk4" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk4" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Main Video 4</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">Feedback Required by 23/8/22</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk5" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk5" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">4K Video Draft 1</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">Signed Off 4/6/22</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk6" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk6" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Do More Thing</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">Feedback Required by 23/8/22</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:pl-5 pl-0 overflow-hidden">
+                        <div class="web-video h-full rounded-bl-2xl rounded-br-2xl overflow-hidden">
+                            <div class="top-head flex justify-between items-center relative border border-stroke border-b-0 bg-light2 lg:py-7 md:py-6 sm:py-5 py-3 2xl:px-12 lg:px-10 md:px-8 sm-6 px-4 rounded-tl-2xl rounded-tr-2xl">
+                                <h2 class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-medium text-white relative z-10 text-center">Web Video Draft 1</h2>
+                            </div>
+                            <div class="web-info-body bg-multiple3 lg:pt-6 sm:pt-5 pt-4 lg:px-11 md:px-10 sm:px-8 px-6 lg:pb-10 md:pb-8 sm:pb-6 pb-4 h-full">
+                                <div class="flex justify-between items-center">
+                                    <div class="picture">
+                                        <img src="assets/img/web-draft-img.svg" alt="">
+                                    </div>
+                                    <div class="title">
+                                        <h4 class="lg:text-base text-sm text-white font-medium">Ronnie Bushell</h4>
+                                        <span class="font-light lg:text-sm text-xs text-white">Post Production Head</span>
+                                    </div>
+                                    <div class="message">
+                                        <img src="assets/img/message.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="flex justify-between lg:pt-9 md:pt-7 sm:pt-6 pt-4">
+                                    <div class="delivered">
+                                        <h4 class="lg:text-sm text-xs text-white font-light">Delivered:</h4>
+                                        <span class="font-medium lg:text-base text-sm text-white mt-2">16th Aug 2022</span>
+                                    </div>
+                                    <div class="feedback">
+                                        <h4 class="lg:text-sm text-xs text-white font-light">Feedback due by:</h4>
+                                        <span class="font-medium lg:text-base text-sm text-white mt-2">23rd Aug 2022</span>
+                                    </div>
+                                </div>
+                                <div class="video-sec lg:mt-14 md:mt-12 sm:mt-10 mt-8">
+                                    <div class="picture-video lg:mt-3 mt-2">
+                                        <img src="assets/img/video.png" class="w-full" alt="">
+                                    </div>
+                                    <div class="actions flex lg:mt-20 md:mt-16 sm:mt-14 mt-10">
+                                        <a href="" class="lg:py-4 md:py-3 py-2 lg:px-5 md:px-4 sm:px-3 px-2 lg:text-base text-sm font-medium text-white bg-success rounded-md mr-3 inline-block">Download .MP4</a>
+                                        <a href="" class="lg:py-4 md:py-3 py-2 lg:px-5 md:px-4 sm:px-3 px-2 lg:text-base text-sm font-medium text-white bg-red rounded-md inline-block">Download All Formats</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editing -->
+
+    <!-- Production -->
+
+    <div class="transition-all duration-1000 ease-linear circle-class-active bg-cover bg-no-repeat bg-center production xl:w-5/6 w-full ml-auto bg-dark2 lg:py-16 md:py-14 sm:py-12 py-10 2xl:px-14 lg:px-12 md:px-10 px-3 absolute xl:top-0 top-20 left-0 right-0 opacity-0 invisible scale-0" id="Production">
+        <div class="transition-all picture-big duration-1000 ease-linear picture-production picture-big absolute left-2/3 top-0 2xl:block hidden bottom-0">
+            <img src="assets/img/Production-big.svg" class="h-full" alt="">
+        </div>
+        <div class="production-content flex sm:flex-row flex-col items-center">
+            <div class="completion-finish text-center sm:mb-0 mb-5">
+                <div class="completion">
+                    <span class="block lg:text-base text-sm text-white font-medium">Completion:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">80%</button>
+                    </div>
+                </div>
+            </div>
+            <div class="2xl:w-3/5 lg:w-3/4 w-full ml-auto xl:pl-0 sm:pl-4 pl-0">
+                <div class="production-top 2xl:py-12 lg:py-8 md:py-6 py-4 px-6 bg-cover bg-no-repeat bg-center w-full rounded-xl bg-[url('assets/img/production-bg.png')] flex 2xl:flex-row flex-col justify-around items-center">
+                    <div class="title">
+                        <h2 class="2xl:text-4xl lg:text-3xl md:text-2xl text-xl text-white font-bold">PRODUCTION</h2>
+                    </div>
+                    <P class="font-medium lg:text-sm text-xs px-3 2xl:py-0 py-3 text-white text-center">This is the section where we tell you about <br class="2xl:block hidden">
+                        this bit of the circle and what needs to be done <br class="2xl:block hidden">
+                        to move onto the next bit and stuff like that
+                    </P>
+                    <div class="actions">
+                        <span class="block font-medium lg:text-base text-sm text-white">Completion Deadline:</span>
+                        <a href="" class="lg:mt-3 mt-2lg:py-3 py-2 lg:px-6 md:px-5 sm:px-4 px-3 lg:text-base text-sm font-medium text-dark2 inline-block bg-white rounded-md border border-light">12th Sep 2022</a>
+                    </div>
+                </div>
+                <div class="gallery lg:mt-7 md:mt-6 mt-4">
+                    <div class="top-heading lg:py-6 md:py-5 sm:py-4 py-3 rounded-tl-2xl rounded-tr-2xl bg-primary2">
+                        <h4 class="lg:text-3xl md:text-2xl sm:text-xl text-lg text-white font-medium text-center">Behind The Scenes Gallery</h4>
+                    </div>
+                    <div class="gallery-body rounded-bl-2xl rounded-br-2xl bg-multiple3 lg:py-12 md:py-10 sm:py-9 py-7 lg:pl-10 md:pl-8 sm:pl-7 pl-6 lg:pr-5 md:pr-4 sm:pr-3.5 pr-3 h-[635px] overflow-y-scroll">
+                        <div class="gallery-grid flex flex-wrap">
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="gallery-box">
+                                <div class="gallery-img">
+                                    <img src="assets/img/gallery-img.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Production -->
+
+    <!-- Planning -->
+
+    <div class="transition-all duration-1000 ease-linear circle-class-active bg-cover bg-no-repeat bg-center planning xl:w-5/6 w-full ml-auto bg-dark2 lg:py-16 md:py-14 sm:py-12 py-10 2xl:px-14 lg:px-12 md:px-10 px-3 absolute xl:top-0 top-20 left-0 right-0 opacity-0 invisible scale-0" id="Planning">
+        <div class="transition-all picture-big duration-1000 ease-linear picture-planning picture-big absolute left-2/3 top-0 2xl:block hidden bottom-0">
+            <img src="assets/img/Planning-big.svg" class="h-full" alt="">
+        </div>
+        <div class="planning-content flex sm:flex-row flex-col items-center">
+            <div class="completion-finish text-center sm:mb-0 mb-5">
+                <div class="completion">
+                    <span class="block lg:text-base text-sm text-white font-medium">Completion:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">100%</button>
+                    </div>
+                </div>
+                <div class="finish lg:mt-9 md:mt-8 sm:mt-7 mt-5">
+                    <span class="block lg:text-base text-sm text-white font-medium">Steps Finished:</span>
+                    <div class="mt-2">
+                        <button class="py-2 lg:px-9 md:px-8 sm:px-7 px-5 bg-white rounded-md border border-light text-dark lg:text-3xl md:text-2xl sm:text-xl text-lg font-medium">8/8</button>
+                    </div>
+                </div>
+            </div>
+            <div class="2xl:w-3/5 lg:w-3/4 w-full ml-auto xl:pl-0 sm:pl-4 pl-0 relative">
+                <div class="editing-top 2xl:py-12 lg:py-8 md:py-6 py-4 px-6 bg-cover bg-no-repeat bg-center w-full rounded-xl bg-[url('assets/img/editing-bg.png')] flex 2xl:flex-row flex-col justify-around items-center relative">
+                    <div class="picture absolute xl:-left-10 left-0 top-1/2 -translate-y-1/2">
+                        <img src="assets/img/planning-tick.svg" class="lg:w-auto w-9" alt="">
+                    </div>
+                    <div class="title">
+                        <h2 class="2xl:text-4xl lg:text-3xl md:text-2xl text-xl text-white font-bold">PLANNING</h2>
+                    </div>
+                    <P class="font-medium lg:text-sm text-xs text-white text-center px-3 2xl:py-0 py-3">This is the section where we tell you about <br class="lg:block hidden">
+                        this bit of the circle and what needs to be done <br class="lg:block hidden">
+                        to move onto the next bit and stuff like that
+                    </P>
+                    <div class="actions">
+                        <span class="block font-medium lg:text-base text-sm text-white">Completion Deadline:</span>
+                        <a href="" class="lg:mt-3 mt-2lg:py-3 py-2 lg:px-6 md:px-5 sm:px-4 px-3 lg:text-base text-sm font-medium text-dark2 inline-block bg-white rounded-md border border-light">12th Nov 2022</a>
+                    </div>
+                </div>
+                <div class="flex lg:flex-nowrap flex-wrap lg:mt-7 md:mt-6 mt-5">
+                    <div class="lg:w-1/2 w-full lg:pr-5 pr-0 lg:mb-0 mb-5">
+                        <div class="videos-section">
+                            <div class="top-head flex justify-between items-center bg-dark border border-stroke border-b-0 lg:py-7 md:py-6 sm:py-5 py-3 2xl:px-12 lg:px-10 md:px-8 sm:px-6 px-4 rounded-tl-2xl rounded-tr-2xl">
+                                <h2 class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-medium text-white">Task List</h2>
+                                <span class="lg:text-base text-sm font-light text-white">Scroll to view more</span>
+                            </div>
+                            <div class="videos-body rounded-bl-2xl rounded-br-2xl 2xl:h-[690px] h-auto bg-multiple2 border border-stroke border-t-0 overflow-y-scroll lg:px-5 md:px-4 px-3">
+                                <div class="video-info relative lg:top-4 top-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk7" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk7" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Project Kick Off</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info mt-8 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk8" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk8" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Create Storyboard</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk9" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk9" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Find Out About Stuff</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk10" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk10" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Plan Something Else</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk11" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk11" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Make A Big Plan</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info lg:mt-4 mt-3 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk12" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk12" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Do More Thing</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info mt-8 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk8" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk8" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Create Storyboard</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                                <div class="video-info mt-8 cursor-pointer">
+                                    <div class="title-tickbox flex title">
+                                        <div class="tickbox">
+                                            <input type="radio" name="type" id="chk8" class="opacity-0 invisible absolute -left-[1000px] -top-[1000px]">
+                                            <label for="chk8" class="relative inline-block lg:w-9 md:w-8 sm:w-7 w-5 lg:h-9 md:h-8 sm:h-7 h-5 rounded-full bg-checkboxColor"></label>
+                                        </div>
+                                        <div class="title lg:pl-6 md:pl-5 sm:pl-4 pl-3">
+                                            <h4 class="lg:text-base text-sm text-dark font-medium">Create Storyboard</h4>
+                                            <p class="lg:text-sm text-sm text-dark font-light mt-1">23/06/2022</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow">
+                                        <img src="assets/img/arrow-vr.svg" alt="">
+                                        <img src="assets/img/arrow-left.svg" class="rotate-[360deg] hidden" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:pl-5 pl-0 overflow-hidden">
+                        <div class="storyboard-top h-full">
+                            <div class="top-head flex justify-between items-center relative border border-stroke border-b-0 bg-light2 lg:py-7 md:py-6 sm:py-5 py-3 2xl:px-12 lg:px-10 md:px-8 sm-6 px-4 rounded-tl-2xl rounded-tr-2xl">
+                                <h2 class="xl:text-3xl lg:text-2xl md:text-xl text-lg font-medium text-white relative z-10 text-center">Create Storyboard</h2>
+                            </div>
+                            <div class="storyboard-body rounded-bl-2xl rounded-br-2xl overflow-hidden relative bg-multiple3 lg:pt-16 md:pt-14 sm:pt-12 pt-0 lg:px-11 md:px-10 sm:px-8 px-6 lg:pb-10 md:pb-8 sm:pb-6 pb-4">
+                                <h4 class="lg:text-base text-sm text-white font-medium">Monday, 23rd June 2022</h4>
+                                <div class="description lg:pt-10 md:pt-8 sm:pt-6 pt-4">
+                                    <span class="block lg:text-sm text-xs font-light text-white">Description</span>
+                                    <p class="lg:text-base text-sm text-white lg:leading-4 leading-normal font-medium pt-2">We will be creating a storyboard with a layout <br class="lg:block hidden">
+                                        that is understandable and hits the brief that <br class="lg:block hidden">
+                                        has been outlined by the you in our meeting.</p>
+                                </div>
+                                <div class="assigness lg:pt-11 md:pt-10 sm:pt-8 pt-6">
+                                    <span class="lg:text-sm text-xs font-light text-white">Assignees</span>
+                                    <div class="assigment-flex">
+                                        <div class="flex justify-between items-center lg:pt-6 md:pt-5 pt-4">
+                                            <div class="picture-title flex items-center">
+                                                <img src="assets/img/Ash.svg" alt="">
+                                                <div class="title lg:pl-7 md:pl-6 sm:pl-5 pl-4">
+                                                    <h4 class="lg:text-base text-sm font-medium text-white">Ash Wilks</h4>
+                                                    <span class="lg:text-sm text-xs font-light text-white">Operations Director</span>
+                                                </div>
+                                            </div>
+                                            <div class="message">
+                                                <img src="assets/img/message.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-28 lg:pt-6 md:pt-5 pt-4">
+                                            <div class="picture-title flex items-center">
+                                                <img src="assets/img/luke.svg" alt="">
+                                                <div class="title lg:pl-7 md:pl-6 sm:pl-5 pl-4">
+                                                    <h4 class="lg:text-base text-sm font-medium text-white">Luke Winter</h4>
+                                                    <span class="lg:text-sm text-xs font-light text-white">Creative Director</span>
+                                                </div>
+                                            </div>
+                                            <div class="message">
+                                                <img src="assets/img/message.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="actions absolute left-0 right-0 bottom-0 text-center lg:mt-20 md:mt-16 sm:mt-14 mt-12">
+                                    <a href="" class="flex justify-center text-center bg-success lg:py-6 md:py-5 sm:py-4 py-3 text-white font-medium lg:text-base text-sm"><img src="assets/img/tick.svg" alt="" class="lg:mr-4 mr-3"> Completed on 22nd June 2022</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Planning -->
+
+   
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

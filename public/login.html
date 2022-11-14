@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/styles.css">
+    <title>Login</title>
+</head>
+<body class="font-Inter">
+    <!-- Login Page -->
+
+    <section class="login-page bg-[url('assets/img/login-bg.png')] bg-cover bg-no-repeat bg-center h-screen 2xl:px-20 xl:px-14 lg:px-12 md:px-8 px-6 flex items-center fixed top-0 bottom-0 right-0 left-0">
+        <div class="login-content 2xl:w-[34%] lg:w-1/2 w-full">
+            <div class="logo xl:mb-12 lg:mb-8 mb-5">
+                <a href="">
+                    <img src="assets/img/login-logo.svg" class="mx-auto" alt="">
+                </a>
+            </div>
+            <h2 class="text-center xl:text-3xl lg:text-2xl text-xl text-white font-semibold xl:mb-10 lg:mb-8 mb-6">PROJECT PORTAL</h2>
+            <form action="" class="bg-multiple border border-stroke rounded-[30px] xl:py-16 lg:py-12 md:py-10 sm:py-8 py-6 2xl:px-20 xl:px-12 lg:px-10 sm:px-8 px-6">
+                <div class="sign-in">
+                    <div class="top-head">
+                        <h4 class="xl:text-3xl lg:text-2xl md:text-xl text-lg text-white font-semibold">Sign in</h4>
+                        <p class="lg:text-sm text-xs text-white font-light lg:mt-3 mt-2">Welcome to your personal project portal</p>
+                    </div>
+                    <div class="text-fields flex lg:mt-9 md:mt-7 sm:mt-5 mt-3 relative">
+                        <img src="assets/img/message-login.svg" class="absolute left-3 top-3" alt="">
+                        <input type="text" value="your@emailaddress.com" placeholder="" class="text-white indent-12 xl:h-12 h-10 bg-loginBg shadow-[0_7px_12px_rgba(0,0,0,0.0.25)] rounded-md outline-none w-full lg:text-base text-sm font-medium">
+                    </div>
+                    <div class="text-fields lg:mt-3 mt-2 flex relative">
+                        <img src="assets/img/password-key.svg" class="absolute left-3 top-3" alt="">
+                        <input type="password" value="•••••••••••••••" placeholder="" class="text-white indent-12 xl:h-12 h-10 bg-loginBg shadow-[0_7px_12px_rgba(0,0,0,0.0.25)] rounded-md outline-none w-full lg:text-base text-sm font-medium">
+                    </div>
+                    <div class="actions xl:mt-9 lg:mt-7 md:mt-5 mt-4">
+                        <a href="index.html" class="bg-primary rounded-md xl:text-base text-sm font-medium block text-center xl:py-5 lg:py-4 py-3 text-white">Login</a>
+                    </div>
+                </div>
+            </form>
+            <div class="forgot-pw xl:mt-9 lg:mt-7 md:mt-5 mt-4 text-center">
+                <p class="text-white opacity-50 lg:text-sm text-xs font-light"> <a href="" class="text-white"> Forgot Password? </a>| Don’t have an account?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Page -->
+</body>
+</html>
